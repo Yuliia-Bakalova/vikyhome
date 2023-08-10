@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback  } from "react";
 import {
   ModalContainer,
   Backdrop,
@@ -24,18 +24,18 @@ const Modal = ({ serviceId, closeModal }) => {
   //   }
   // };
 
-  const getDetails = async () => {
+  const getDetails = useCallback(async () => {
     try {
       const response = await axios.get(`http://3.74.246.7/api/v1/services/${serviceId}/`);
       setDetails(response.data);
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [serviceId]);
 
   useEffect(() => {
     getDetails();
-  }, [serviceId]);
+  }, [getDetails]);
 
 
 
