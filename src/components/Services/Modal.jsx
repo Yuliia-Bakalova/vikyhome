@@ -14,22 +14,32 @@ import { GrClose } from "react-icons/gr";
 const Modal = ({ serviceId, closeModal }) => {
   const [details, setDetails] = useState([]);
 
-
-  useEffect(() => {
-    getDetails()
-  }, []);
-
-
+  // const getDetails = async () => {
+  //   try {
+  //     await axios
+  //       .get(`http://3.74.246.7/api/v1/services/${serviceId}/`)
+  //       .then((response) => setDetails(response.data));
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   const getDetails = async () => {
     try {
-      await axios
-        .get(`http://3.74.246.7/api/v1/services/${serviceId}/`)
-        .then((response) => setDetails(response.data));
+      const response = await axios.get(`http://3.74.246.7/api/v1/services/${serviceId}/`);
+      setDetails(response.data);
     } catch (error) {
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    getDetails();
+  }, [serviceId]);
+
+
+
+
 
   return (
     <Backdrop>
