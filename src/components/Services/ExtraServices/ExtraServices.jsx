@@ -20,7 +20,7 @@ const ExtraServices = ({ type, closeModal }) => {
   const getServices = async() => {
   try{
     const extraResponse = await axios.get(
-        "https://3.74.246.7/api/v1/extra/"
+        "http://3.74.246.7/api/v1/extra/"
       );
       setDataExtra(extraResponse.data);
     } catch (error) {

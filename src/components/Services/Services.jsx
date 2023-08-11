@@ -32,7 +32,7 @@ const Services = () => {
 
 const getServices = async() => {
 try{
-   await axios.get("https://3.74.246.7/api/v1/services/").then(response => setData(response.data));
+   await axios.get("http://3.74.246.7/api/v1/services/").then(response => setData(response.data));
   
 }
 catch(error){console.error(error)}

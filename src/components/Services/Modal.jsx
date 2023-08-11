@@ -26,7 +26,7 @@ const Modal = ({ serviceId, closeModal }) => {
 
   const getDetails = useCallback(async () => {
     try {
-      const response = await axios.get(`https://3.74.246.7/api/v1/services/${serviceId}/`);
+      const response = await axios.get(`http://3.74.246.7/api/v1/services/${serviceId}/`);
       setDetails(response.data);
     } catch (error) {
       console.error(error);
