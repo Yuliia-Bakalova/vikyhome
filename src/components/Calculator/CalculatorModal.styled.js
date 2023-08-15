@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import DEVICE from "../../constants/deviceSize";
 
+
 export const Backdrop = styled.div`
   position: fixed;
   left: 0;
@@ -12,6 +13,7 @@ export const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
+ 
 `;
 
 export const Container = styled.div`

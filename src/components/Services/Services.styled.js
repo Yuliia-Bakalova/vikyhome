@@ -40,16 +40,11 @@ border-radius: 10px;
 @media ${DEVICE.laptop} {
 
  flex-basis: calc(25% - 20px);
-    height: 290px;
+height: 290px;
     margin-right: 20px;
     margin-bottom: 20px; 
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-
+    display: block;
+padding: 24px 3px 5px 3px;
 }
 
  `;
@@ -61,8 +56,8 @@ height: 150px;
 
 }
 @media ${DEVICE.laptop} {
-  width: 180px;
- height: 180px;
+  width: 178px;
+ height: 178px;
 }
   `;
 
@@ -78,7 +73,7 @@ margin-right: 8px;
 
 }
 @media ${DEVICE.laptop} {
-  font-size: 22px;
+  font-size: 21px;
   margin-top: 10px;
 margin-bottom: 13px;
 margin-right: 10px;

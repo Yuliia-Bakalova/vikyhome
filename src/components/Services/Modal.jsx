@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState, useCallback  } from "react";
+import React, { useEffect, useState, useCallback  } from "react";
 import {
   ModalContainer,
   Backdrop,
@@ -14,20 +14,24 @@ import { GrClose } from "react-icons/gr";
 const Modal = ({ serviceId, closeModal }) => {
   const [details, setDetails] = useState([]);
 
-  // const getDetails = async () => {
-  //   try {
-  //     await axios
-  //       .get(`http://3.74.246.7/api/v1/services/${serviceId}/`)
-  //       .then((response) => setDetails(response.data));
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const handleBackdropClick = (event) => {
+    if (event.target === event.currentTarget) {
+      closeModal();
+    }
+  };
 
   const getDetails = useCallback(async () => {
     try {
       const response = await axios.get(`http://3.74.246.7/api/v1/services/${serviceId}/`);
-      setDetails(response.data);
+      const data = response.data;
+     
+      data.description = data.description.split('\n').map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          <br />
+        </React.Fragment>
+      ));
+      setDetails(data);
     } catch (error) {
       console.error(error);
     }
@@ -37,30 +41,20 @@ const Modal = ({ serviceId, closeModal }) => {
     getDetails();
   }, [getDetails]);
 
-
-
-
-
   return (
-    <Backdrop>
+    <Backdrop onClick={handleBackdropClick}>
       <ModalContainer>
-               
-                   
-              <CloseBtn onClick={closeModal}>
-                <GrClose />
-              </CloseBtn>
-                <ModalBox>  
-              <ModalDescription>{details.description} </ModalDescription>
-              <ModalPrice> {details.price}</ModalPrice>
-              <ModalPriceDesc> {details.price_description}</ModalPriceDesc>
-            </ModalBox>
-        
-      
+        <CloseBtn onClick={closeModal}>
+          <GrClose />
+        </CloseBtn>
+        <ModalBox>
+          <ModalDescription>{details.description}</ModalDescription>
+          <ModalPrice>{details.price}</ModalPrice>
+          <ModalPriceDesc>{details.price_description}</ModalPriceDesc>
+        </ModalBox>
       </ModalContainer>
     </Backdrop>
   );
 };
 
 export default Modal;
-
-

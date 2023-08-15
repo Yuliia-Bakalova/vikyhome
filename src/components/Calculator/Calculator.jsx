@@ -86,65 +86,71 @@ const Calculator = () => {
       <CalculatorTitle>Доступні послуги:</CalculatorTitle>
       <CalcList>
         {services.map((service) => (
-          <Item key={service.id}>
-            {service.title} - {service.price} ({service.price_description})
-            {isItemSelected(service.id, "service") ? (
-              <Input
-                type="number"
-                min="1"
-                value={
-                  selectedItems[`${service.id}-service`]?.quantity === null
-                    ? ""
-                    : selectedItems[`${service.id}-service`]?.quantity
-                }
-                onChange={(e) =>
-                  handleServiceSelection(service.id, "service", e.target.value)
-                }
-              />
-            ) : (
-              <span>{}</span>
-            )}
-            <BtnChange
-              onClick={() => handleServiceSelection(service.id, "service", 1)}
-              disabled={
-                selectedItems[`${service.id}-service`]?.isButtonDisabled
-              }
-            >
-              {isItemSelected(service.id, "service") ? "Вибрано" : "Вибрати"}
-            </BtnChange>
-          </Item>
-        ))}
+  <Item key={service.id}>
+    <span>
+      {service.title} - {service.price} ({service.price_description})
+    </span>
+    <div>
+      {isItemSelected(service.id, "service") ? (
+        <Input
+          type="number"
+          min="1"
+          value={
+            selectedItems[`${service.id}-service`]?.quantity === null
+              ? ""
+              : selectedItems[`${service.id}-service`]?.quantity
+          }
+          onChange={(e) =>
+            handleServiceSelection(service.id, "service", e.target.value)
+          }
+        />
+      ) : (
+        <span>{}</span>
+      )}
+      <BtnChange
+        onClick={() => handleServiceSelection(service.id, "service", 1)}
+        disabled={selectedItems[`${service.id}-service`]?.isButtonDisabled}
+      >
+        {isItemSelected(service.id, "service") ? "Вибрано" : "Вибрати"}
+      </BtnChange>
+    </div>
+  </Item>
+))}
       </CalcList>
 
       <CalculatorTitle>Доступні додаткові послуги:</CalculatorTitle>
       <CalcList>
-        {extra.map((item) => (
-          <Item key={item.id}>
-            {item.title} - {item.price} ({item.price_description})
-            {isItemSelected(item.id, "extra") ? (
-              <Input
-                type="number"
-                min="1"
-                value={
-                  selectedItems[`${item.id}-extra`]?.quantity === null
-                    ? ""
-                    : selectedItems[`${item.id}-extra`]?.quantity
-                }
-                onChange={(e) =>
-                  handleServiceSelection(item.id, "extra", e.target.value)
-                }
-              />
-            ) : (
-              <span>{}</span>
-            )}
-            <BtnChange
-              onClick={() => handleServiceSelection(item.id, "extra", 1)}
-              disabled={selectedItems[`${item.id}-extra`]?.isButtonDisabled}
-            >
-              {isItemSelected(item.id, "extra") ? "Вибрано" : "Вибрати"}
-            </BtnChange>
-          </Item>
-        ))}
+      {extra.map((item) => (
+  <Item key={item.id}>
+    <span>
+      {item.title} - {item.price} ({item.price_description})
+    </span>
+    <div>
+      {isItemSelected(item.id, "extra") ? (
+        <Input
+          type="number"
+          min="1"
+          value={
+            selectedItems[`${item.id}-extra`]?.quantity === null
+              ? ""
+              : selectedItems[`${item.id}-extra`]?.quantity
+          }
+          onChange={(e) =>
+            handleServiceSelection(item.id, "extra", e.target.value)
+          }
+        />
+      ) : (
+        <span>{}</span>
+      )}
+      <BtnChange
+        onClick={() => handleServiceSelection(item.id, "extra", 1)}
+        disabled={selectedItems[`${item.id}-extra`]?.isButtonDisabled}
+      >
+        {isItemSelected(item.id, "extra") ? "Вибрано" : "Вибрати"}
+      </BtnChange>
+    </div>
+  </Item>
+))}
       </CalcList>
 
       <CalculatorTitle>Вибрані послуги та додаткові послуги:</CalculatorTitle>

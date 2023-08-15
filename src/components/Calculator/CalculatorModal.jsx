@@ -11,8 +11,13 @@ import {
 import { GrClose } from "react-icons/gr";
 
 const CalculatorModal = ({ closeModal }) => {
+  const handleBackdropClick = (event) => {
+    if (event.target === event.currentTarget) {
+      closeModal();
+    }
+  };
   return (
-    <Backdrop>
+    <Backdrop onClick={handleBackdropClick}>
       <Container>
         <WrapBtn>
           <CloseButton onClick={closeModal}>
@@ -21,7 +26,7 @@ const CalculatorModal = ({ closeModal }) => {
         </WrapBtn>
 
         <CalcBox>
-          <CalcTitle>Калькулятор</CalcTitle>
+          <CalcTitle>Розрахувати вартість</CalcTitle>
           <Calculator />
         </CalcBox>
       </Container>

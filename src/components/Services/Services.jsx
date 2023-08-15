@@ -42,26 +42,24 @@ catch(error){console.error(error)}
 
 const openModal = (id) => {
   setSelectedServiceId(id);
+  document.body.style.overflow = "hidden";
 };
 
 const closeModal = () => {
   setSelectedServiceId(null);
+  document.body.style.overflow = "auto"; 
 };
 
 
-// const openCalculatorModal = () => {
-//   setCalculatorModalOpen(true);
-// };
 
-// const closeCalculatorModal = () => {
-//   setCalculatorModalOpen(false);
-// };
 
 const openExtra = () => {
   setOpenExtra(true);
+  document.body.style.overflow = "hidden";
 };
 const closeExtra = () => {
   setOpenExtra(false);
+  document.body.style.overflow = "auto"; 
 };
 
 
@@ -93,13 +91,7 @@ const closeExtra = () => {
       )}
       
 
-     {/* <CalculatorButton onClick={openCalculatorModal}>
-     <ServiceText> Розрахувати вартість </ServiceText>
-    <BsFillCalculatorFill fontSize={27} />  
-      </CalculatorButton>
-     {isCalculatorModalOpen && (
-        <CalculatorModal closeModal={closeCalculatorModal} />
-      )} */}
+
     </Container>
   );
 };

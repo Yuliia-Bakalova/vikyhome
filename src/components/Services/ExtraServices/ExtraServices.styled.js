@@ -30,7 +30,7 @@ export const ModalDescription = styled.p`
   @media ${DEVICE.tablet} {
   }
   @media ${DEVICE.laptop} {
-    font-size: 35px;
+    font-size: 30px;
     margin-right: 20px;
   }
 `;
@@ -42,7 +42,7 @@ export const ModalPrice = styled.p`
   @media ${DEVICE.tablet} {
   }
   @media ${DEVICE.laptop} {
-    font-size: 38px;
+    font-size: 30px;
     
   }
 `;
@@ -55,7 +55,7 @@ export const ModalPriceDesc = styled.p`
   @media ${DEVICE.tablet} {
   }
   @media ${DEVICE.laptop} {
-    font-size: 35px;
+    font-size: 28px;
     margin-left: 10px;
   }
 `;
@@ -85,8 +85,8 @@ export const ModalContainer = styled.div`
   @media ${DEVICE.tablet} {
   }
   @media ${DEVICE.laptop} {
-    width: 1000px;
- height: 1000px;
+ width: 800px;
+height: 800px;
  padding: 20px; 
   }
 `;

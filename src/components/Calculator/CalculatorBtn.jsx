@@ -9,10 +9,12 @@ const CalculateButton = ({ onClick }) => {
 
     const openCalculatorModal = () => {
         setCalculatorModalOpen(true);
+        document.body.style.overflow = "hidden";
       };
       
       const closeCalculatorModal = () => {
         setCalculatorModalOpen(false);
+        document.body.style.overflow = "auto"; 
       };
 
 
