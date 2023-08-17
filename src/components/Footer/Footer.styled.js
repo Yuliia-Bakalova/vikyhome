@@ -32,7 +32,7 @@ export const Title = styled.h2`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 20px;
   color: ${p => p.theme.colors.titleMainColor};
  text-shadow: #671629 1px 1px 1px;
@@ -83,10 +83,10 @@ export const ContactTitle = styled.h2`
   font-size: 25px;
   margin-bottom: 10px;
  color: ${p => p.theme.colors.titleMainColor};
- text-shadow: #671629 2px 2px 1px;
+ 
 
  @media ${DEVICE.tablet} {
-
+  text-shadow: #671629 2px 2px 1px;
 }
 @media ${DEVICE.laptop} {
   display: flex;
@@ -94,5 +94,21 @@ export const ContactTitle = styled.h2`
   justify-content: center;
   font-size: 25px;
  font-size: 30px;
+ text-shadow: #671629 2px 2px 1px;
+}
+`;
+
+export const SocialBox =styled.div`
+display: block;
+margin-top: 20px;
+padding-bottom: 20px;
+
+@media ${DEVICE.tablet} {
+
+}
+@media ${DEVICE.laptop} {
+  display: block;
+margin-bottom: 20px;
+margin-top: 20px;
 }
 `;

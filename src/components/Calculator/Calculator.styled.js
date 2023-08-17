@@ -116,6 +116,7 @@ export const Input = styled.input`
   border-radius: 30px;
   padding: 7px 7px 7px 10px;
 
+
   @media ${DEVICE.tablet} {
   }
   @media ${DEVICE.laptop} {
@@ -123,4 +124,7 @@ export const Input = styled.input`
     border: 2px solid #ffa5008a;
     padding: 7px;
   }
+
 `;
+
+

@@ -56,10 +56,57 @@ margin-top: 10px;
   margin-top: 10px;
 }
 @media ${DEVICE.laptop} {
-  width: 450px;
+  min-width: 1200px;
   margin-right: 10px;
   margin-bottom: 10px;
   margin-top: 20px;
+  padding: 40px;
 }
 `;
 
+export const Image = styled.img`
+
+margin: 0 auto;
+
+ width: 600px;
+height: 500px;
+
+
+@media ${DEVICE.tablet} {
+
+}
+@media ${DEVICE.laptop} {
+  width: 950px;
+height: 900px;
+
+}
+`;
+
+export const WrapSlider =styled.div`
+
+display: flex; 
+justify-content: center;
+
+`;
+
+
+
+export const CustomPrevArrow = styled.div`
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  color: blue;
+  font-size: 54px;
+  cursor: pointer;
+`;
+
+export const CustomNextArrow = styled.div`
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: red;
+  font-size: 54px;
+  cursor: pointer;
+`

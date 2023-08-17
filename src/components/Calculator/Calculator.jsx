@@ -9,6 +9,7 @@ import {
   BtnChange,
   DeleteBtn,
   Input,
+
 } from "./Calculator.styled";
 
 const Calculator = () => {
@@ -106,6 +107,7 @@ const Calculator = () => {
         />
       ) : (
         <span>{}</span>
+
       )}
       <BtnChange
         onClick={() => handleServiceSelection(service.id, "service", 1)}

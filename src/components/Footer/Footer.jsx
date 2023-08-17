@@ -4,14 +4,17 @@ import {
   ContactItem,
   ContactBox,
   ContactTitle,
+  SocialBox
 } from "./Footer.styled";
+import { BsInstagram } from "react-icons/bs";
+import { LiaTelegramPlane } from "react-icons/lia";
 
 const Footer = () => {
   return (
     <Container>
-      <Title> VikyHome</Title>
+      <Title> vikyhome</Title>
 
-      <ContactBox>
+          <ContactBox>
         <ContactTitle> Контакти </ContactTitle>
         <ContactItem>
           <a
@@ -26,11 +29,31 @@ const Footer = () => {
             href="mailto:vikatiurina@i.ua"
             style={{ textDecoration: "none", color: "#000" }}
           >
-            {" "}
             vikatiurina@i.ua
           </a>
         </ContactItem>
       </ContactBox>
+
+      <SocialBox>
+      <ContactTitle> Приєднуйтесь </ContactTitle>
+      <a
+          href="https://www.instagram.com/vikyhome_kyiv/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ fontSize: "54px", color: "#62032b" }}
+        >
+          <BsInstagram style={{ marginRight: "25px" }} />
+        </a>
+        <a
+          href="https://t.me/vikiyhome"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ fontSize: "63px", color: "#0227bd" }}
+        >
+          <LiaTelegramPlane />
+        </a>
+
+      </SocialBox>
     </Container>
   );
 };

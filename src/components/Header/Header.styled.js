@@ -12,14 +12,13 @@ border-radius: 0px 0px 20px 20px;
 display:flex;
 align-items: center;
 justify-content: space-between;
-
-@media ${DEVICE.mobile} {
+padding: 20px;
 margin-right:auto;
 margin-left:auto;
-}
+
 
 @media ${DEVICE.tablet} {
-
+  padding: 20px 30px;
 }
 @media ${DEVICE.laptop} {
   padding-left: 50px;
@@ -29,28 +28,30 @@ margin-left:auto;
 
 font-size: 16px;
 font-weight:700;
+padding: 20px 50px;
 }
 `;
 
 export const Title = styled.h1`
  font-family: cursive;
  color: ${p => p.theme.colors.titleMainColor};
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 20px;
 
 @media ${DEVICE.tablet} {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 @media ${DEVICE.laptop} {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 20px;
+ 
  
 }
 `;
@@ -58,6 +59,9 @@ export const Title = styled.h1`
 export const ContactItem =styled.li`
 color: ${p => p.theme.colors.titleMainColor};
 text-decoration: none;
+display: flex;
+align-items: center;
+
  @media ${DEVICE.mobile} {
   font-size: 15px;
  }
@@ -81,4 +85,20 @@ export const ContactBox =styled.div`
   display: block;
 }
 
+`;
+
+export const Button = styled.button`
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
 `;

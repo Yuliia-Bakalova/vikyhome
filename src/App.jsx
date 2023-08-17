@@ -6,7 +6,8 @@ import Hero from './components/Hero/Hero';
 import Statistics from './components/Statistics/Statistics';
 import CalculateButton from './components/Calculator/CalculatorBtn';
 import Services from "../src/components/Services/Services";
-import BeforeAfter from './components/BeforeAfter/BeforeAfter';
+// import BeforeAfter from './components/BeforeAfter/BeforeAfter';
+import PhotoGallery from './components/BeforeAfter/PhotoGallery';
 import Footer from './components/Footer/Footer';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './theme';
@@ -22,7 +23,8 @@ function App() {
   <Statistics/>
 <Services/>
 < CalculateButton />
-<BeforeAfter />
+{/* <BeforeAfter /> */}
+<PhotoGallery/>
   <Footer/>
     </Container>
     </ThemeProvider>
