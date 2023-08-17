@@ -1,23 +1,29 @@
 {
   "files": {
-    "main.css": "/vikyhome/static/css/main.98500c07.css",
-    "main.js": "/vikyhome/static/js/main.392938dc.js",
+    "main.css": "/vikyhome/static/css/main.150c00f5.css",
+    "main.js": "/vikyhome/static/js/main.ba6573e2.js",
     "static/js/787.606084a8.chunk.js": "/vikyhome/static/js/787.606084a8.chunk.js",
-    "static/media/img2.jpg": "/vikyhome/static/media/img2.eec3b11fed5aecfea52a.jpg",
-    "static/media/img1.jpg": "/vikyhome/static/media/img1.e94c022a0cf48d1a387a.jpg",
-    "static/media/img5.jpg": "/vikyhome/static/media/img5.eeac3792f56cf8d36a45.jpg",
+    "static/media/after2.jpeg": "/vikyhome/static/media/after2.0cefb884271e00e36761.jpeg",
+    "static/media/before2.jpeg": "/vikyhome/static/media/before2.5a8583c11cc0df384ee3.jpeg",
+    "static/media/after5.jpeg": "/vikyhome/static/media/after5.43c47feb8aa966dd7e61.jpeg",
+    "static/media/after7.jpeg": "/vikyhome/static/media/after7.0275406792dd479c2a38.jpeg",
+    "static/media/after1.jpeg": "/vikyhome/static/media/after1.e4650acb135ec987108e.jpeg",
+    "static/media/before1.jpeg": "/vikyhome/static/media/before1.ba02dbd9430c709b293a.jpeg",
+    "static/media/after6.jpeg": "/vikyhome/static/media/after6.c14c43942299df1badd9.jpeg",
+    "static/media/before4.jpg": "/vikyhome/static/media/before4.558d4b15b544868fe035.jpg",
+    "static/media/before3.jpg": "/vikyhome/static/media/before3.cc786f5b64f09cb69996.jpg",
+    "static/media/after3.jpg": "/vikyhome/static/media/after3.8dfd6c5d91c2ff824bf9.jpg",
+    "static/media/after4.jpg": "/vikyhome/static/media/after4.354d3afed1678bd0d668.jpg",
+    "static/media/viky.jpg": "/vikyhome/static/media/viky.b4c980e6124c9057c3de.jpg",
+    "static/media/img3.jpg": "/vikyhome/static/media/img3.fb22ba60defbc0cacf63.jpg",
     "static/media/vacuum-cleaner.png": "/vikyhome/static/media/vacuum-cleaner.da42e080d5025a5555a4.png",
-    "static/media/slick.svg": "/vikyhome/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/vikyhome/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/vikyhome/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/vikyhome/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/vikyhome/index.html",
-    "main.98500c07.css.map": "/vikyhome/static/css/main.98500c07.css.map",
-    "main.392938dc.js.map": "/vikyhome/static/js/main.392938dc.js.map",
+    "main.150c00f5.css.map": "/vikyhome/static/css/main.150c00f5.css.map",
+    "main.ba6573e2.js.map": "/vikyhome/static/js/main.ba6573e2.js.map",
     "787.606084a8.chunk.js.map": "/vikyhome/static/js/787.606084a8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.98500c07.css",
-    "static/js/main.392938dc.js"
+    "static/css/main.150c00f5.css",
+    "static/js/main.ba6573e2.js"
   ]
 }
