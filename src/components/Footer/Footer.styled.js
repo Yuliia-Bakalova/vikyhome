@@ -119,7 +119,11 @@ margin-top: 20px;
 padding-bottom: 20px;
 
 @media ${DEVICE.tablet} {
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+margin-bottom: 20px;
 }
 @media ${DEVICE.laptop} {
   display: flex;

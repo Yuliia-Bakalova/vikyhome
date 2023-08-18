@@ -79,7 +79,7 @@ Developed by
         &
 </DevTitle>
         <a
-          href="www.linkedin.com/in/yuliia-bakalova-8375b5259"
+          href="https://www.linkedin.com/in/yuliia-bakalova-8375b5259"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: "none", color: "#474444", fontSize: "23px", marginLeft: "10px" }}
