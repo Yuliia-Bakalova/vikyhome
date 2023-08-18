@@ -50,11 +50,9 @@ export const Image = styled.img`
    /* margin-right: 30px; */
 }
 @media ${DEVICE.laptop} {
-  max-width: 45%;
-    max-height: 50%;
-  /* max-width: 500px;
-   max-height: 800px; */
-   /* margin-right: 30px; */
+    max-width: 30%;
+    max-height: 30%;
+
 }
 
 `;
