@@ -1,10 +1,13 @@
 import {
   Container,
+  TopBox,
   Title,
   ContactItem,
   ContactBox,
   ContactTitle,
-  SocialBox
+  SocialBox,
+  DevBox,
+  DevTitle
 } from "./Footer.styled";
 import { BsInstagram } from "react-icons/bs";
 import { LiaTelegramPlane } from "react-icons/lia";
@@ -12,7 +15,8 @@ import { LiaTelegramPlane } from "react-icons/lia";
 const Footer = () => {
   return (
     <Container>
-      <Title> vikyhome</Title>
+      <TopBox>
+    <Title> vikyhome</Title>
 
           <ContactBox>
         <ContactTitle> Контакти </ContactTitle>
@@ -54,6 +58,35 @@ const Footer = () => {
         </a>
 
       </SocialBox>
+
+      </TopBox>
+  
+
+
+      <DevBox>
+<DevTitle>
+Developed by
+</DevTitle>
+<a
+          href="https://www.linkedin.com/in/ihor-davydovskyi-98b137219/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "#474444", fontSize: "23px", marginRight: "10px", marginLeft: "10px" }}
+        >
+          Shtierlits
+        </a>
+        <DevTitle>
+        &
+</DevTitle>
+        <a
+          href="www.linkedin.com/in/yuliia-bakalova-8375b5259"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "#474444", fontSize: "23px", marginLeft: "10px" }}
+        >
+          Yulia Bakalova
+        </a>
+      </DevBox>
     </Container>
   );
 };

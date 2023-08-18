@@ -7,7 +7,7 @@ export const theme = {
     colorWhite: "#fff",
     titleMainColor: "#000",
     colorBgSecond: "#8d8d8dac",
-
+    devColor: "#f5ebeb",
 
 
     titleColor: "#8d8d8dac",

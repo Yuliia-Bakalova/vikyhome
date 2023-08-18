@@ -22,8 +22,9 @@ margin-left:auto;
 padding-right: 80px;
 margin-right:auto;
 margin-left:auto;
-display: flex;
-justify-content:space-between;
+/* display: flex;
+justify-content:space-between; */
+
 }
 
 `;
@@ -49,7 +50,7 @@ export const Title = styled.h2`
 export const ContactItem =styled.li`
 color: ${p => p.theme.colors.colorWhite};
 text-decoration: none;
-font-size: 15px;
+font-size: 24px;
 margin-top: 5px;
 @media ${DEVICE.tablet} {
 
@@ -80,7 +81,7 @@ export const ContactTitle = styled.h2`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 30px;
   margin-bottom: 10px;
  color: ${p => p.theme.colors.titleMainColor};
  
@@ -92,7 +93,6 @@ export const ContactTitle = styled.h2`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
  font-size: 30px;
  text-shadow: #671629 2px 2px 1px;
 }
@@ -108,6 +108,56 @@ padding-bottom: 20px;
 }
 @media ${DEVICE.laptop} {
   display: block;
+margin-bottom: 20px;
+margin-top: 20px;
+}
+`;
+
+export const DevBox =styled.div`
+display: block;
+margin-top: 20px;
+padding-bottom: 20px;
+
+@media ${DEVICE.tablet} {
+
+}
+@media ${DEVICE.laptop} {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+margin-bottom: 20px;
+
+}
+`;
+
+export const DevTitle = styled.h2`
+
+ color: ${p => p.theme.colors.devColor};
+ font-size: 20px;
+
+ @media ${DEVICE.tablet} {
+
+}
+@media ${DEVICE.laptop} {
+
+  
+ font-size: 20px;
+
+}
+`;
+
+export const TopBox =styled.div`
+display: block;
+margin-top: 20px;
+padding-bottom: 20px;
+
+@media ${DEVICE.tablet} {
+
+}
+@media ${DEVICE.laptop} {
+  display: flex;
+  justify-content: space-between;
 margin-bottom: 20px;
 margin-top: 20px;
 }

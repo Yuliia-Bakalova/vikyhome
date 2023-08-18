@@ -5,39 +5,42 @@ import {
   ServiceBox,
   ServiceImage,
   ServiceText,
-  // CalculatorButton,
 } from "./Services.styled";
 import Modal from "./Modal";
-// import CalculatorModal from "../Calculator/CalculatorModal";
 import ExtraServices from "./ExtraServices/ExtraServices";
 import image from "../../images/vacuum-cleaner.png";
-// import { BsFillCalculatorFill } from "react-icons/bs";
 
 
 const Services = () => {
   const [data, setData] = useState([]);
   const [selectedServiceId, setSelectedServiceId] = useState(null);
-  // const [isCalculatorModalOpen, setCalculatorModalOpen] = useState(false);
   const [isOpenExtra, setOpenExtra] = useState(false);
 
 
 
-  useEffect(() => {
-   
+  useEffect(() => {  
   getServices()
   }, []);
 
 
 
 
-const getServices = async() => {
-try{
-   await axios.get("http://3.74.246.7/api/v1/services/").then(response => setData(response.data));
+// const getServices = async() => {
+// try{
+//    await axios.get("http://3.74.246.7/api/v1/services/").then(response => setData(response.data));
   
-}
-catch(error){console.error(error)}
-}
-
+// }
+// catch(error){console.error(error)}
+// }
+const getServices = async () => {
+  try {
+    const response = await axios.get("http://3.74.246.7/api/v1/services/");
+    const sortedData = response.data.sort((a, b) => a.id - b.id); // Сортування за зростанням id
+    setData(sortedData);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 
 const openModal = (id) => {
@@ -64,35 +67,54 @@ const closeExtra = () => {
 
 
   return (
+    // <Container>
+
+    //   {data.map(item => {return  <ServiceBox key={item.id} onClick={() => openModal(item.id)}>
+    //     <ServiceImage src={item.image} alt={item.title} />
+    //     <ServiceText>{item.title} </ServiceText>
+    //   </ServiceBox>})}
+
+    //   {selectedServiceId && (
+    //     <Modal
+    //       serviceId={selectedServiceId}
+    //       closeModal={closeModal}
+    //     />
+    //   )}
+
+       
+
+    //    <ServiceBox onClick={openExtra}>
+    //    <ServiceImage src={image} alt="пилосос"/>
+    //    <ServiceText>Додаткові послуги </ServiceText>
+       
+    //    </ServiceBox>
+      
+    //    {isOpenExtra && (
+    //     <ExtraServices closeModal={closeExtra} />
+    //   )}
+      
+
+
+    // </Container>
     <Container>
-
-      {data.map(item => {return  <ServiceBox key={item.id} onClick={() => openModal(item.id)}>
+    {data.map((item) => (
+      <ServiceBox key={item.id} onClick={() => openModal(item.id)}>
         <ServiceImage src={item.image} alt={item.title} />
-        <ServiceText>{item.title} </ServiceText>
-      </ServiceBox>})}
+        <ServiceText>{item.title}</ServiceText>
+      </ServiceBox>
+    ))}
 
-      {selectedServiceId && (
-        <Modal
-          serviceId={selectedServiceId}
-          closeModal={closeModal}
-        />
-      )}
+    {selectedServiceId && (
+      <Modal serviceId={selectedServiceId} closeModal={closeModal} />
+    )}
 
-       
+    <ServiceBox onClick={openExtra}>
+      <ServiceImage src={image} alt="пилосос" />
+      <ServiceText>Додаткові послуги</ServiceText>
+    </ServiceBox>
 
-       <ServiceBox onClick={openExtra}>
-       <ServiceImage src={image} alt="пилосос"/>
-       <ServiceText>Додаткові послуги </ServiceText>
-       
-       </ServiceBox>
-      
-       {isOpenExtra && (
-        <ExtraServices closeModal={closeExtra} />
-      )}
-      
-
-
-    </Container>
+    {isOpenExtra && <ExtraServices closeModal={closeExtra} />}
+  </Container>
   );
 };
 
