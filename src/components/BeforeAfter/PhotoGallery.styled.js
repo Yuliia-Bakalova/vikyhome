@@ -3,7 +3,7 @@ import DEVICE from "./../../constants/deviceSize";
 
 
 export const Wrapper =styled.div`
-   padding: 20px;
+padding: 20px;
 margin-right:auto;
 margin-left:auto;
 background-color: #8d8d8dac;
@@ -20,6 +20,7 @@ export const Title = styled.h1`
   align-items: center;
   justify-content: center;
   font-size: 37px;
+  margin-bottom: 25px;
 
 @media ${DEVICE.tablet} {
   font-size: 60px;
@@ -35,25 +36,25 @@ export const Title = styled.h1`
 `;
 
 export const Box =styled.div`
+ margin-bottom: 20px;
 
-          margin-bottom: 20px;
-        
 `;
 
 export const Image = styled.img`
-  max-width: 100px;
-   max-height: 100px;
-
-   margin-right: 30px;
+ max-width: 50%;
+    max-height: 50%;
+   /* margin-right: 30px; */
    @media ${DEVICE.tablet} {
-    max-width: 320px;
-   max-height: 300px;
-   margin-right: 30px;
+   max-width: 50%;
+    max-height: 50%;
+   /* margin-right: 30px; */
 }
 @media ${DEVICE.laptop} {
-  max-width: 500px;
-   max-height: 800px;
-   margin-right: 30px;
+  max-width: 45%;
+    max-height: 70%;
+  /* max-width: 500px;
+   max-height: 800px; */
+   /* margin-right: 30px; */
 }
 
 `;
