@@ -41,17 +41,17 @@ export const Box =styled.div`
 `;
 
 export const Image = styled.img`
- max-width: 50%;
+ max-width: 40%;
     max-height: 50%;
    /* margin-right: 30px; */
    @media ${DEVICE.tablet} {
-   max-width: 50%;
+   max-width: 40%;
     max-height: 50%;
    /* margin-right: 30px; */
 }
 @media ${DEVICE.laptop} {
   max-width: 45%;
-    max-height: 70%;
+    max-height: 50%;
   /* max-width: 500px;
    max-height: 800px; */
    /* margin-right: 30px; */
