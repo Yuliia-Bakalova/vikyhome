@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import {
   CalcContainer,
   CalculatorTitle,
@@ -26,23 +26,23 @@ const Calculator = () => {
     localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
   }, [selectedItems]);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const servicesResponse = await axios.get(
-       `${apiUrl}/api/v1/services/`
+        `${apiUrl}/api/v1/services/`
       );
       setServices(servicesResponse.data);
-
+  
       const extraResponse = await axios.get(`${apiUrl}/api/v1/extra/`);
       setExtra(extraResponse.data);
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [apiUrl]);
+  
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   const isItemSelected = (itemId, type) => {
     return selectedItems.hasOwnProperty(`${itemId}-${type}`);

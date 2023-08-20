@@ -22,26 +22,29 @@ const Modal = ({ serviceId, closeModal }) => {
     }
   };
 
-  const getDetails = useCallback(async () => {
-    try {
-      const response = await axios.get(`${apiUrl}/api/v1/services/${serviceId}/`);
-      const data = response.data;
-     
-      data.description = data.description.split('\n').map((line, index) => (
-        <React.Fragment key={index}>
-          {line}
-          <br />
-        </React.Fragment>
-      ));
-      setDetails(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [serviceId]);
+ const getDetails = useCallback(async () => {
+  try {
+    const response = await axios.get(`${apiUrl}/api/v1/services/${serviceId}/`);
+    const data = response.data;
+   
+    data.description = data.description.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
+    setDetails(data);
+  } catch (error) {
+    console.error(error);
+  }
+}, [ apiUrl, serviceId]);
 
-  useEffect(() => {
-    getDetails();
-  }, [getDetails]);
+useEffect(() => {
+  getDetails();
+}, [getDetails]);
+
+
+
 
   return (
     <Backdrop onClick={handleBackdropClick}>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback  } from "react";
 import {
   WrapBtn,
   ModalText,
@@ -24,22 +24,18 @@ const ExtraServices = ({ type, closeModal }) => {
       }
     };
  
-  const getServices = async() => {
-  try{
-    const extraResponse = await axios.get(
-        `${apiUrl}/api/v1/extra/`
-      );
-      setDataExtra(extraResponse.data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+    const getServices = useCallback(async () => {
+      try {
+        const extraResponse = await axios.get(`${apiUrl}/api/v1/extra/`);
+        setDataExtra(extraResponse.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }, [apiUrl]);
   
-
-  
-  useEffect(() => {
-    getServices();
-  }, []);
+    useEffect(() => {
+      getServices();
+    }, [getServices]);
   
  
     return (

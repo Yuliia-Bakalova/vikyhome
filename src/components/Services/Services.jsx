@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import {
   Container,
   ServiceBox,
@@ -18,21 +18,21 @@ const Services = () => {
 
   const apiUrl = process.env.REACT_APP_URL_SECRET;
 
-  useEffect(() => {  
-  getServices()
-  }, []);
+  const getServices = useCallback(async () => {
+    try {
+      const response = await axios.get(`${apiUrl}/api/v1/services/`);
+      const sortedData = response.data.sort((a, b) => a.id - b.id);
+      setData(sortedData);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [apiUrl]);
+  
+  useEffect(() => {
+    getServices();  
+  }, [apiUrl, getServices]);
 
 
-
-const getServices = async () => {
-  try {
-    const response = await axios.get(`${apiUrl}/api/v1/services/`);
-    const sortedData = response.data.sort((a, b) => a.id - b.id); // Сортування за зростанням id
-    setData(sortedData);
-  } catch (error) {
-    console.error(error);
-  }
-};
 
 
 const openModal = (id) => {
