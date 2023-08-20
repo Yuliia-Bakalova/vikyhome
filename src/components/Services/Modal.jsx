@@ -14,6 +14,8 @@ import { GrClose } from "react-icons/gr";
 const Modal = ({ serviceId, closeModal }) => {
   const [details, setDetails] = useState([]);
 
+  const apiUrl = process.env.REACT_APP_URL_SECRET;
+
   const handleBackdropClick = (event) => {
     if (event.target === event.currentTarget) {
       closeModal();
@@ -22,7 +24,7 @@ const Modal = ({ serviceId, closeModal }) => {
 
   const getDetails = useCallback(async () => {
     try {
-      const response = await axios.get(`http://3.74.246.7/api/v1/services/${serviceId}/`);
+      const response = await axios.get(`${apiUrl}/api/v1/services/${serviceId}/`);
       const data = response.data;
      
       data.description = data.description.split('\n').map((line, index) => (

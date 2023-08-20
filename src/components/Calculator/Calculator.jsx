@@ -20,6 +20,8 @@ const Calculator = () => {
   const [selectedItems, setSelectedItems] = useState(initialSelectedItems);
   const [totalAmount, setTotalAmount] = useState(0);
 
+  const apiUrl = process.env.REACT_APP_URL_SECRET;
+
   useEffect(() => {
     localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
   }, [selectedItems]);
@@ -31,11 +33,11 @@ const Calculator = () => {
   const fetchData = async () => {
     try {
       const servicesResponse = await axios.get(
-        "http://3.74.246.7/api/v1/services/"
+       `${apiUrl}/api/v1/services/`
       );
       setServices(servicesResponse.data);
 
-      const extraResponse = await axios.get("http://3.74.246.7/api/v1/extra/");
+      const extraResponse = await axios.get(`${apiUrl}/api/v1/extra/`);
       setExtra(extraResponse.data);
     } catch (error) {
       console.error(error);

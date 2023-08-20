@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import DEVICE from "../../../constants/deviceSize";
 
 export const WrapBtn = styled.div`
-margin-bottom: 50px;
+margin-bottom: 55px;
 background-color: transparent;
 color: transparent;
 border: none;
@@ -38,6 +38,7 @@ export const ModalDescription = styled.p`
 export const ModalPrice = styled.p`
   color: ${p => p.theme.colors.titleMainColor};
   font-size: 18px;
+  margin-left:auto;
 
   @media ${DEVICE.tablet} {
   }
@@ -53,6 +54,7 @@ export const ModalPriceDesc = styled.p`
   margin-left: 5px;
 
   @media ${DEVICE.tablet} {
+
   }
   @media ${DEVICE.laptop} {
     font-size: 28px;
@@ -74,8 +76,10 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  width: 300px;
- height: 840px;
+  /* width: 300px;
+ height: 840px; */
+ max-width: 1000px;
+  max-height: 800px;
   position: relative;
   background-color: ${p => p.theme.colors.colorPink};
   overflow: auto; 
@@ -83,10 +87,12 @@ export const ModalContainer = styled.div`
   text-align: start;
 
   @media ${DEVICE.tablet} {
+    max-width: 1000px;
+  max-height: 800px;
   }
   @media ${DEVICE.laptop} {
- width: 800px;
-height: 800px;
+ /* width: 800px;
+height: 800px; */
  padding: 20px; 
   }
 `;
@@ -94,5 +100,6 @@ height: 800px;
 export const ModalText = styled.div`
   margin-bottom: 20px;
   display: flex;
-
+align-items: center;
+justify-content: center;
 `;

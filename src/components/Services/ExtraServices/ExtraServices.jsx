@@ -16,6 +16,7 @@ import { GrClose } from "react-icons/gr";
 const ExtraServices = ({ type, closeModal }) => {
     const [dataExtra, setDataExtra] = useState([]);
 
+    const apiUrl = process.env.REACT_APP_URL_SECRET;
 
     const handleBackdropClick = (event) => {
       if (event.target === event.currentTarget) {
@@ -26,7 +27,7 @@ const ExtraServices = ({ type, closeModal }) => {
   const getServices = async() => {
   try{
     const extraResponse = await axios.get(
-        "http://3.74.246.7/api/v1/extra/"
+        `${apiUrl}/api/v1/extra/`
       );
       setDataExtra(extraResponse.data);
     } catch (error) {

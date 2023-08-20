@@ -16,7 +16,7 @@ const Services = () => {
   const [selectedServiceId, setSelectedServiceId] = useState(null);
   const [isOpenExtra, setOpenExtra] = useState(false);
 
-
+  const apiUrl = process.env.REACT_APP_URL_SECRET;
 
   useEffect(() => {  
   getServices()
@@ -24,17 +24,9 @@ const Services = () => {
 
 
 
-
-// const getServices = async() => {
-// try{
-//    await axios.get("http://3.74.246.7/api/v1/services/").then(response => setData(response.data));
-  
-// }
-// catch(error){console.error(error)}
-// }
 const getServices = async () => {
   try {
-    const response = await axios.get("http://3.74.246.7/api/v1/services/");
+    const response = await axios.get(`${apiUrl}/api/v1/services/`);
     const sortedData = response.data.sort((a, b) => a.id - b.id); // Сортування за зростанням id
     setData(sortedData);
   } catch (error) {
@@ -67,35 +59,6 @@ const closeExtra = () => {
 
 
   return (
-    // <Container>
-
-    //   {data.map(item => {return  <ServiceBox key={item.id} onClick={() => openModal(item.id)}>
-    //     <ServiceImage src={item.image} alt={item.title} />
-    //     <ServiceText>{item.title} </ServiceText>
-    //   </ServiceBox>})}
-
-    //   {selectedServiceId && (
-    //     <Modal
-    //       serviceId={selectedServiceId}
-    //       closeModal={closeModal}
-    //     />
-    //   )}
-
-       
-
-    //    <ServiceBox onClick={openExtra}>
-    //    <ServiceImage src={image} alt="пилосос"/>
-    //    <ServiceText>Додаткові послуги </ServiceText>
-       
-    //    </ServiceBox>
-      
-    //    {isOpenExtra && (
-    //     <ExtraServices closeModal={closeExtra} />
-    //   )}
-      
-
-
-    // </Container>
     <Container>
     {data.map((item) => (
       <ServiceBox key={item.id} onClick={() => openModal(item.id)}>

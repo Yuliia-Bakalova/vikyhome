@@ -60,5 +60,5 @@ export const Image = styled.img`
 export const WrapSlider =styled.div`
 padding: 20px;
 display: flex; 
-justify-content: center;
+
 `;
