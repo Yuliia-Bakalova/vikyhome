@@ -30,10 +30,10 @@ const Footer = () => {
         </ContactItem>
         <ContactItem>
           <a
-            href="mailto:vikatiurina@i.ua"
+            href="mailto:vikyhome.kyiv@gmail.com"
             style={{ textDecoration: "none", color: "#000" }}
           >
-            vikatiurina@i.ua
+            vikyhome.kyiv@gmail.com
           </a>
         </ContactItem>
       </ContactBox>

@@ -29,12 +29,12 @@ const Header = () => {
         <ContactItem>
        
           <a
-            href="mailto:vikatiurina@i.ua"
+            href="mailto:vikyhome.kyiv@gmail.com"
             style={{ textDecoration: "none", color: "#000",  display: "flex",
             alignItems: "center", }}
           >
            <IoMailOutline style={{ marginRight: "10px", fontSize: "30px" }} />
-            vikatiurina@i.ua
+           vikyhome.kyiv@gmail.com
           </a>
         </ContactItem>
       </ContactBox>

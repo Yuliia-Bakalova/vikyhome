@@ -50,10 +50,10 @@ export const Title = styled.h2`
 export const ContactItem =styled.li`
 color: ${p => p.theme.colors.colorWhite};
 text-decoration: none;
-font-size: 24px;
+font-size: 19px;
 margin-top: 5px;
 @media ${DEVICE.tablet} {
-
+  font-size: 24px;
 }
 @media ${DEVICE.laptop} {
  font-size: 24px;

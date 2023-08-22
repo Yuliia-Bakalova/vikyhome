@@ -10,14 +10,19 @@ box-shadow: 10px 10px 10px rgba(173, 18, 18, 0.12),
 10px 10px 10px rgba(169, 162, 162, 0.2);
 border-radius: 0px 0px 20px 20px;
 display:flex;
+flex-wrap:wrap;
 align-items: center;
-justify-content: space-between;
+justify-content: center;
 padding: 20px;
 margin-right:auto;
 margin-left:auto;
 
 
 @media ${DEVICE.tablet} {
+  display:flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap:nowrap;
   padding: 20px 30px;
 }
 @media ${DEVICE.laptop} {
@@ -77,6 +82,7 @@ align-items: center;
 export const ContactBox =styled.div`
   @media ${DEVICE.mobile} {
     display: block;
+    margin-left: 20px;
 }
 @media ${DEVICE.tablet} {
 
