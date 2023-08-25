@@ -1,33 +1,14 @@
-// import React, { useState } from "react";
-// import logo from './logo.svg';
-import { Container } from './App.styled';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import Statistics from './components/Statistics/Statistics';
-import CalculateButton from './components/Calculator/CalculatorBtn';
-import Services from "../src/components/Services/Services";
-// import BeforeAfter from './components/BeforeAfter/BeforeAfter';
-import PhotoGallery from './components/BeforeAfter/PhotoGallery';
-import Footer from './components/Footer/Footer';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './theme';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MainPage from './components/page/MainPage';
 
 function App() {
-
-
   return (
-    <ThemeProvider theme={theme}>
-    <Container>
-      <Header/>
-      <Hero/>
-  <Statistics/>
-<Services/>
-< CalculateButton />
-{/* <BeforeAfter /> */}
-<PhotoGallery/>
-  <Footer/>
-    </Container>
-    </ThemeProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/vikyhome" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
